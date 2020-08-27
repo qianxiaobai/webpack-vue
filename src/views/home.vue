@@ -1,5 +1,8 @@
 <template>
-  <div>home 
+  <div>
+    <img style="width:100px;height:200px" src="../assets/img/logo77.png" alt="">
+    asdsa
+    <span class="iconfont">&#xe6ec;</span>
     <router-view></router-view>
   </div>
 </template>

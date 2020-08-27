@@ -81,9 +81,10 @@ module.exports={
                         name:"[name]-[hash].[ext]",//[]表示占位符,name表示源文件的名字，ext是源文件的后缀,hash是复制的文件名入‘570e69d9e57c7d0203b5e30a9dd1dbdf’
                         // outputPath:"images/",    //配置输出位置
                           // 图片输出的实际路径(相对于dist)
-                          outputPath: 'images',
+                          outputPath: 'images/',
                           // 当小于某KB时转为base64
-                          limit: 2048
+                          limit: 2048,
+                          esModule: false //作用是启用CommonJS模块语法
                       }
                   }
               ]
@@ -92,7 +93,17 @@ module.exports={
            {
             test: /\.vue$/,
             loader: 'vue-loader'
-          }
+          },
+            // 处理字体
+            {
+            test: /\.(woff2?|eot|ttf|otf|svg|icon)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                name:"[name]-[hash:7].[ext]",//[]表示占位符,name表示源文件的名字，ext是源文件的后缀,hash是复制的文件名入‘570e69d9e57c7d0203b5e30a9dd1dbdf’
+                outputPath:"fonts/",    //配置输出位置
+                limit: 10000,                  
+            }
+        },
         ]
     },
     //别名配置

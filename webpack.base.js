@@ -8,8 +8,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports={
     entry:"./src/main.js",
     output:{
-        filename:"[name].js",
-        path:path.resolve(__dirname,"dist")
+        path:path.resolve(__dirname,"dist"),
+        filename:"bundle.js"
     },
     plugins: [
         // new VueLoaderPlugin(),
@@ -109,7 +109,8 @@ module.exports={
     //别名配置
     resolve: {
         alias: {
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            '@': path.resolve(__dirname, '../src')
         }
     },
  

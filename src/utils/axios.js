@@ -1,2 +1,4 @@
 import Vue from "vue"
-import axios from "ax"
+import axios from "axios"
+
+console.log("aaaaaaaaaaa")

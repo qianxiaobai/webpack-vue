@@ -1,6 +1,7 @@
 const {merge} = require("webpack-merge")
 const base = require("./webpack.base")
 module.exports = merge(base,{
+    mode:"development",
     devServer:{
         contentBase:'./dist',    //服务器启动的目录
         open:true,   

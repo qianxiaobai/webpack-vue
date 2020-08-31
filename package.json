@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "element-ui": "^2.13.2",
     "jquery": "^3.5.1"
   }
 }

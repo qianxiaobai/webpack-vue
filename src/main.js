@@ -5,9 +5,6 @@ import "./assets/reset.css"
 import router from "./router"
 import store from "./store"
 
-// console.log(vue)
-
-
 new Vue({
     router,
     store,

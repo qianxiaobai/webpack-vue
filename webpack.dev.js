@@ -4,7 +4,7 @@ module.exports = merge(base,{
     mode:"development",
     devServer:{
         contentBase:'./dist',    //服务器启动的目录
-        open:true,   
+        // open:true,   
         proxy:{    //设置代理，可用于本地mock数据，本地自己启动另外一个服务
             // "/api":{
             //     target:"http://localhost:9000"

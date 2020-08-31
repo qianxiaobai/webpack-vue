@@ -8,7 +8,8 @@
 </template>
 
 <script>
-//import common from './common'
+import {get,post} from "@/utils/axios"
+import {login,getTree} from "@/utils/http"
 export default {
   name:'APP',
   components:{
@@ -17,9 +18,25 @@ export default {
   data() {
     return { };
   },
-  created(){ },
-  mounted(){ },
-  methods: { }
+  created(){
+   this.getTreedata()
+   },
+  mounted(){
+    post("/user/login",{userName:"admin",password:"111111"}).then(res=>{
+      console.log(res)
+    })
+   },
+  methods: {
+    async getTreedata(){
+      let tree = await getTree()
+      console.log(tree,"ffffffffffffffffff")
+    },
+    // getTreedata(){
+    //   getTree().then(res=>{
+    //     console.log(res)
+    //   })
+    // }
+   }
 };
 </script>
 

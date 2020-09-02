@@ -18,18 +18,23 @@ export default {
   data() {
     return { };
   },
-  created(){
-   this.getTreedata()
+   created(){
+    this.loginHandler()
+    this.getTreedata()
    },
   mounted(){
-    post("/user/login",{userName:"admin",password:"111111"}).then(res=>{
-      console.log(res)
-    })
    },
   methods: {
+    async loginHandler(){
+      let loginData = login({userName:"admin",password:"111111"})
+      // login({userName:"admin",password:"111111"}).then(res=>{
+      //   console.log(res,"vvvsdsdsdds")
+      // })
+      console.log(loginData,"loginData")
+    },
     async getTreedata(){
       let tree = await getTree()
-      console.log(tree,"ffffffffffffffffff")
+      // console.log(tree,"ffffffffffffffffff")
     },
     // getTreedata(){
     //   getTree().then(res=>{
